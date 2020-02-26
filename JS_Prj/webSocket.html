@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+
+        <script>
+            
+        </script>
+
+
+    </head>
+    <body>
+
+        <form id="my-form">
+            <div> <label>First Name:</label> <input type="text" value="first" id="fname">   </div><br> 
+            <div> <label>Last Name:</label>  <input type="text" value="last" id="lname">   </div><br>
+            <div> <label>Age:</label>        <input type="text" value="30" id="age">     </div><br>
+            <div> <label>Sex:</label>        <input type="text" value="male" id="sex">     </div><br>
+            <div> <label>Income:</label>     <input type="text" value="10000" id="income">  </div><br>
+        </form>
+
+        <label>Num Of Records:</label>    <label text="0" id="status">  <br>
+
+        <button onclick="myFunction()">Click me</button>
+
+
+        <script>
+
+            
+
+            function myFunction() {
+                console.log("Click me button pressed");        
+
+                var msg = {
+                    FIRST_NAME: document.getElementById("fname").value,
+                    LAST_NAME:  document.getElementById("lname").value,
+                    AGE:        document.getElementById("age").value,
+                    SEX:        document.getElementById("sex").value,
+                    INCOME:     document.getElementById("income").value,
+                };
+
+
+                var ws = new WebSocket("ws://localhost:8765/")                        
+                ws.onopen = function(e) {  
+                    document.getElementById('status').innerHTML = "Waiting..."              
+                    console.log("Sending to server");
+                    ws.send(JSON.stringify(msg));
+                    //ws.send(msg);
+                };  
+                ws.onmessage = function (event) {                    
+                    document.getElementById('status').innerHTML = event.data
+                }              
+            }
+
+
+           
+        </script>
+    </body>
+</html>
