@@ -17,9 +17,19 @@ class DataBaseManager(DBManagerInterface):
     def create_new_data_base(self, db_name):
         sqlCreateDatabase = "create database " + db_name + ";"
         self.cursor.execute(sqlCreateDatabase)
+        self.conn.commit()
 
     def drop_table(self):
         self.cursor.execute("DROP TABLE IF EXISTS %s;" % self.table_name)
+        self.conn.commit()
+
+    def print_table(self):
+        sql = '''SELECT * FROM ''' + self.table_name
+        self.cursor.execute(sql)
+        content = self.cursor.fetchall()
+        for row in content:
+            print(row)
+
 
     def create_table(self):
         sql = '''CREATE TABLE ''' + self.table_name + '''(
@@ -30,11 +40,13 @@ class DataBaseManager(DBManagerInterface):
          INCOME FLOAT
       )'''
         self.cursor.execute(sql)
+        self.conn.commit()
 
     def add_emloyee(self, name, last, age, sex, income):
         sql = '''INSERT INTO ''' + self.table_name + '''(FIRST_NAME,LAST_NAME, AGE,SEX,INCOME)
             VALUES (%s, %s, %s, %s, %s)'''
         self.cursor.execute(sql, (name, last, age, sex, income))
+        self.conn.commit()
         print("Add Succssfully")
 
     def get_number_of_records(self):

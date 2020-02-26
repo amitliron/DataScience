@@ -9,6 +9,7 @@ def main():
     #db_manager.drop_table()
     #db_manager.create_table()
 
+    db_manager.print_table()
     server_web_socket = ServerWebSocket(db_manager)
     server_web_socket.start()
 
