@@ -11,6 +11,7 @@ class DataBaseManager(DBManagerInterface):
     def __init__(self, table_name):
         self.table_name = table_name
         self.conn = psycopg2.connect(user='postgres', password='docker', host='127.0.0.1', port='5432')
+        print("DB Connected OK")
         self.cursor = self.conn.cursor()
 
     def create_new_data_base(self, db_name):
