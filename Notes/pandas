@@ -1,0 +1,52 @@
+type(apple) 	->	 dataFrame
+apple.shape	->	 (100, 6)
+apple.colums	->	 [('a','b', 'name'), dtype='object']
+
+
+1. slice
+---------
+apple.iloc[:5,:]	or	apple.iloc[-5:,:]
+
+
+2. functions:
+--------------
+apple.head(5) or	apple.head()
+apple.tail(3) or	apple.tail()
+apple.info()		- we can get the types, num of records, and num of nulls
+apple.values		- return array of numpy
+
+col = apple['field_name'] where col is serias (and apple is dataframe)
+
+3. change columns names and indexes names (from 0 to... to other):
+-------------------------------------------------
+data.columns = ['col1', 'col2', 'col3']
+data.index   = ['A', 'B', 'C', 'D']
+
+
+4. general
+--------------
+list(zip(list_keys, list_values))	
+data = dict(zipped)
+df = pd.DataFrame(data)	
+
+
+5. import
+------------------
+a = pd.read_csv(file_name)
+a = pd.read_csv(file_name,header=None)	 		    - don't assume first line is the header 
+a = pd.read_csv(file_name,header=None,names=col_list_names) - set columns names
+a = pd.read_csv(file_name,na_values='-1')		    - mark '-1' as NAN values
+a = pd.read_csv(file_name,parse_dates)			    -
+a.iloc[10:20, :]					    - save only slice from the input (from rows 10-20)
+
+6. export
+------------------
+a.to_csv(file_name)
+a.to_csv(file_name, sep='\t')
+a.to_excel(file_name)
+
+
+Notes:
+------------------------
+1. see pandas with dates (when read csv)
+2. see pandas and plot (when plot directly from dataframe)

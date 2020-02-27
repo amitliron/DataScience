@@ -1,10 +1,6 @@
 - join and inner join are the same
 
 
-check out:
-1. we will see headers: name, name, region
-1. we will see headers: city, country, region
-
 SELECT city.name, country.name, country.region
 FROM cities AS city
   INNER JOIN countries AS country
@@ -91,3 +87,22 @@ FROM countries_plus AS c
 	INNER JOIN pop_plus AS P
 	ON c.code = p.country_code
 ORDER BY geosize_group;
+
+
+
+LEFT &  RIGHT Joins
+--------------------------------
+LEFT: all rows from left with right. if right does not match to leaft, it will remain null
+
+
+SELECT c1.name AS city, 
+       code, 
+       c2.name AS country,
+       region, 
+       city_proper_pop
+FROM cities AS c1  
+LEFT JOIN countries AS c2
+ON c1.country_code = c2.code
+ORDER BY code DESC;
+
+
