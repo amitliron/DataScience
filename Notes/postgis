@@ -4,19 +4,31 @@ WKT  - well known text
 GIS  -  geography information system
 
 
-1. CREATE TABLE cities ( id int4 primary key, name varchar(50), geom geometry(POINT,4326) );
+psql commands:
+\l		- list databases
+\c db_name	- change to db
+\dt		- display tables
+\q		- quit
 
-2. ST_GeomFromText
+1. create extension postgis;
+
+2. CREATE TABLE cities ( id int4 primary key, name varchar(50), geom geometry(POINT,4326) );
+
+3. ST_GeomFromText
    convert from a text format to spatial
    INSERT INTO cities (id, geom, name) VALUES (1,ST_GeomFromText('POINT(-0.1257 51.508)',4326),'London, England');
 
-3. SELECT id, ST_AsText(geom), ST_AsEwkt(geom), ST_X(geom), ST_Y(geom) 
+4. SELECT id, ST_AsText(geom), ST_AsEwkt(geom), ST_X(geom), ST_Y(geom) 
    FROM cities;
 
-4. Display distances between cities in meters
+5. Display distances between cities in meters
 
    SELECT p1.name,p2.name,ST_DistanceSphere(p1.geom,p2.geom) 
    FROM cities AS p1, cities AS p2 
    WHERE p1.id > p2.id;	
 
-5.
+
+
+
+QGIS
+- application to view on map
