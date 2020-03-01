@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+plt.plot(x,y)	
+plt.scatter(x,y,s=[],c=[])				- s marker size, c - color
+plt.xscale('log')
+plt.hist(x, bins=10)		
+plt.title('')
+plt.xlabael('')
+plt.ylabael('')
+plt.show()
+plt.yticks([0, 2, 4, 6],['0B','2B','4B','6B'])		- ([tickets], [labels])
+plt.clf() 						- cleans it up again so you can start afresh
+plt.grid()

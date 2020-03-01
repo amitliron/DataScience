@@ -1,0 +1,13 @@
+
+Dictionaries:
+-------------------------------------------------
+1.	dic = {0:"hello", True:"dear", "two":"222"}
+2.	"two" in dic
+3.	del(dic[True])
+4.	europe.keys()
+
+
+
+List
+-------------------------------------------------
+1. 	list.index("england")
