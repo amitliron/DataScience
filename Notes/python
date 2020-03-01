@@ -11,3 +11,13 @@ Dictionaries:
 List
 -------------------------------------------------
 1. 	list.index("england")
+2.	list > 23 		=>	return array with result "true" or "false"
+
+
+
+numpy
+-------------------------------------------------
+np.logical_or(bmi>21, bmi<22)	=>	return array with result "true" or "false"
+
+
+
