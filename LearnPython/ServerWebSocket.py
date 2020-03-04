@@ -16,7 +16,7 @@ class ServerWebSocket:
         print("Got: " + msg)
         pmsg = json.loads(msg)
         print("Get: ", pmsg["FIRST_NAME"])
-        self.db_manager.add_emloyee(pmsg["FIRST_NAME"], pmsg["LAST_NAME"], pmsg["AGE"], pmsg["SEX"], pmsg["INCOME"])
+        self.db_manager.add_emloyee(pmsg["FIRST_NAME"], pmsg["LAST_NAME"], pmsg["AGE"], pmsg["SEX"], pmsg["INCOME"],pmsg["LOCATION"])
         #await websocket.send("Updated")
         count = self.db_manager.get_number_of_records()
         await websocket.send(str(count))

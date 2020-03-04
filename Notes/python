@@ -1,3 +1,7 @@
+General
+-------------------------------------------------
+x[0:2]=='RT'
+
 
 Dictionaries:
 -------------------------------------------------
@@ -18,6 +22,72 @@ List
 numpy
 -------------------------------------------------
 np.logical_or(bmi>21, bmi<22)	=>	return array with result "true" or "false"
+
+
+
+
+tuples
+-------------------------------------------------
+t = (1,2,3)
+a,b,c = t
+t[1]	
+
+
+functions
+-------------------------------------------------
+t = (a,b)
+return t
+
+1. global var (use the global varable insead of function / instead of creatting new one)
+2. nonlocal -> dont creat a new varable, use the exsisting one
+
+
+flexiable arguments:
+
+def add(*args):
+	for num in args
+		sum+=num
+
+
+def add(**args):
+	for key, val in args.items()
+		sum+=num
+
+add(name='amit',last='liron')
+
+
+func(a,b='b',c='cc')
+
+func(5,c='ddd')
+
+
+
+lamda
+-------------------------------------------------
+r = lambda x,y: x**y
+r(2,3)
+
+
+map
+-------------------------------------------------
+map - return a map object
+a = [1,2,3,4,5]
+b = map(lambda num: num**2, a)
+
+fellowship = ['frodo', 'samwise', 'merry', 'pippin', 'aragorn', 'boromir', 'legolas', 'gimli', 'gandalf']
+result = filter(lambda val:len(val)>6, fellowship)
+result_list = list(result)
+
+
+
+exceptions
+-------------------------------------------------
+try:
+except:
+	print('')
+except TypeError:
+	print('')
+	raise ValueError('')
 
 
 

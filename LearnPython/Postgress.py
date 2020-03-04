@@ -24,12 +24,12 @@ class DataBaseManager(DBManagerInterface):
         self.conn.commit()
 
     def print_table(self):
+        print("Table: ")
         sql = '''SELECT * FROM ''' + self.table_name
         self.cursor.execute(sql)
         content = self.cursor.fetchall()
         for row in content:
             print(row)
-
 
     def create_table(self):
         sql = '''CREATE TABLE ''' + self.table_name + '''(
