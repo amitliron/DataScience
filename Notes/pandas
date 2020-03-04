@@ -50,6 +50,10 @@ a = pd.read_csv(file_name,na_values='-1')		    - mark '-1' as NAN values
 a = pd.read_csv(file_name,parse_dates)			    -
 a.iloc[10:20, :]					    - save only slice from the input (from rows 10-20)
 
+for chunk in pd.read_csv(file, chunksize=1000):
+	r.append(chunk['x'])
+
+
 6. export
 ------------------
 a.to_csv(file_name)

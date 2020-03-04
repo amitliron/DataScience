@@ -23,7 +23,7 @@ def main():
 
 
     #db_manager.add_emloyee("a", "a", 30, "M", 1000, "0 0, 10 10, 50 10, 0 0")
-    #db_manager.add_emloyee("b", "b", 30, "M", 500,  "10 10, 10 20, 30 20, 30 30, 10 10")
+    db_manager.add_emloyee("c", "c", 30, "M", 500,  "10 10, 10 20, 30 20, 30 10, 10 10")
     db_manager.print_table()
 
     #server_web_socket = ServerWebSocket(db_manager)
