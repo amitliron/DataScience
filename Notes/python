@@ -112,3 +112,23 @@ except TypeError:
 
 
 
+generators
+-------------------------------------------------
+1. save memory (use it instead of [])
+
+result = (num for num in range(10))
+print(next(result))
+for x in result:
+	print(x)
+
+
+2. generator functions:
+
+	def f():
+		x = 0
+		yeild x
+		x +=1
+
+
+3. tweet_clock_time = [entry[11:19] for entry in tweet_time if entry[17:19] == '19']
+
