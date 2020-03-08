@@ -1,0 +1,23 @@
+One hot encoding
+- categorical values start from 0 goes all the way up to N-1 categories
+- sklearn’s LabelEncoder
+- example:
+
+╔════╦══════╦══════╦════════╦
+║ VW ║ Acura║ Honda║ Price  ║
+╠════╬══════╬══════╬════════╬
+║ 1  ╬ 0    ╬ 0    ║ 20000  ║
+║ 0  ╬ 1    ╬ 0    ║ 10011  ║
+║ 0  ╬ 0    ╬ 1    ║ 50000  ║
+║ 0  ╬ 0    ╬ 1    ║ 10000  ║
+╚════╩══════╩══════╩════════╝
+
+
+Word Embedding
+- This technique is used to reduce the dimensionality of text data but these models can also learn some interesting traits about words in a vocabulary.
+- usually the new dim = 300 
+- words with same context will get closed vectors
+- off-the-shelf word embedding models:
+	- Word2Vec (by Google)
+	- GloVe (by Stanford)
+	- fastText (by Facebook)
